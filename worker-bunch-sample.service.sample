@@ -1,0 +1,17 @@
+[Unit]
+Description=worker-bunch-sample
+After=syslog.target network.target
+# consider to add "docker.service" too if your database or mqtt broker runs within a local docker container
+# Requires=docker.service
+# After=syslog.target network.target docker.service
+
+[Service]
+Type=simple
+ExecStart=/opt/worker-bunch-sample/worker-bunch-sample.sh --systemd-mode --config-file /opt/worker-bunch-sample/worker-bunch-sample.yaml
+Restart=always
+RestartSec=30
+WorkingDirectory=/opt/worker-bunch-sample
+User=<your service user>
+
+[Install]
+WantedBy=multi-user.target
