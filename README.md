@@ -53,8 +53,8 @@ Edit your `worker-bunch-sample.yaml`.
 # the JSON schema get dynamically adapted by configured workers, so this output contain more also the worker sections.
 ./worker-bunch-sample.sh --json-schema --config-file ./worker-bunch-sample.yaml
 
-# start the logger
-./worker-bunch-sample.sh --print-logs --config-file ./worker-bunch-sample.yaml
+# start the app
+./worker-bunch-sample.sh --print-log-console --config-file ./worker-bunch-sample.yaml
 # abort with ctrl+c
 
 ```
